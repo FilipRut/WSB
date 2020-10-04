@@ -1,7 +1,7 @@
 <?php
 $text = <<<TEXT
-wsb - wy¿sza
-szko³a
+wsb - wyï¿½sza
+szkoï¿½a
 bankowa
 TEXT;
 
@@ -21,7 +21,7 @@ $name = 'jAnUsz';
 $name = ucfirst(strtolower($name));
 echo $name, '<hr>';
 
-$lorem = <<LOREM
+$lorem = <<<LOREM
 LOREM;
 
 echo $lorem, '<hr>';
@@ -42,11 +42,29 @@ echo strlen(trim($name1)); //5
 $name1 = trim($name1);
 echo strlen($name1); //5
 
+//przeszukiwanie dnaych
+$text = 'PoznaÅ„, ul. Rynek JeÅ¼ycki 13, tel. 61 627 00 00';
+$search = strstr($text, 'tel');
+echo $search; //tel. 61 627 00 00
 
+$search = strstr($text, 'Tel');
+$search = strstr($text, 'Tel', true);
 
+//czyszczenie zawartosci bufora
+ob_clean();
 
+//zad.1
+//znajdz domene pobrania od uzytkownika
 
+//przetwarzanie ciagow znakow
+$replace = str_replace('%name%', 'Janusz', 'Masz na imie: %name%');
+echo $replace;
 
+//substing
+$surname = substr('Katarzyna Nowak', 3);
+echo $surname; //arzyna Nowak
 
+$surname = substr('Katarzyna Nowak', 3, 5);
+echo $surname; //arzyna
 
 ?>
